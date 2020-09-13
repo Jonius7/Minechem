@@ -16,5 +16,5 @@ Before submitting a pull request, please review the [PR Guidelines](https://gith
 Please note that when running Minechem v6 in a dev environment, you'll need to add the following to your VM options:  
 `-Dfml.coreMods.load=minechem.asm.LoadingPlugin`
 
-Requires (AfterLifeLochie/fontbox)[https://github.com/AfterLifeLochie/fontbox]
+Requires [AfterLifeLochie/fontbox](https://github.com/AfterLifeLochie/fontbox)
 
