@@ -14,7 +14,7 @@ buildscript {
     }
     dependencies {
         classpath 'net.minecraftforge.gradle:ForgeGradle:1.2-SNAPSHOT'
-        classpath 'de.undercouch:gradle-download-task:1.2'
+        classpath 'de.undercouch:gradle-download-task:4.1.1'
     }
 }
 
@@ -42,7 +42,7 @@ repositories {
     }
     ivy {
         name 'FMP'
-        artifactPattern "http://files.minecraftforge.net/[module]/[module]-dev-[revision].[ext]"
+        artifactPattern "http://files.minecraftforge.net/[module]/[module]-[revision].[ext]"
     }
 	maven {
 		// OpenComputers maven repo
@@ -63,7 +63,7 @@ group = "minechem"
 archivesBaseName = "Minechem"
 
 minecraft {
-    version = "${config.version.forge}-${config.version.minecraft}"
+    version = "${config.version.minecraft}-${config.version.forge}-${config.version.minecraft}"
 
     replace "@MAJOR@", config.version.mod.major
     replace "@MINOR@", config.version.mod.minor
@@ -132,8 +132,8 @@ task getLibraries {
         libsFolder.mkdirs()
     }
 
-	def ccSource = 'http://minecraft.curseforge.com/mc-mods/67504-computercraft/files/2216236/download'
-	def ccDest = new File('libs', 'ComputerCraft-1.65.jar')
+	def ccSource = 'https://media.forgecdn.net/files/2269/339/ComputerCraft1.75.jar'
+	def ccDest = new File('libs', 'ComputerCraft1.75.jar')
 
 
 	if(!ccDest.exists() ){
@@ -143,8 +143,8 @@ task getLibraries {
 		}
 	}
 
-    def mtSource = 'http://minetweaker3.powerofbytes.com/download/MineTweaker3-Dev-1.7.10-3.0.9C.jar'
-    def mtDest = new File('libs', 'MineTweaker3-Dev-1.7.10-3.0.9C.jar')
+    def mtSource = 'https://media.forgecdn.net/files/2338/487/CraftTweaker-1.7.10-3.0.13.jar'
+    def mtDest = new File('libs', 'CraftTweaker-1.7.10-3.0.13.jar')
 
     if(!mtDest.exists() ){
         download {
@@ -153,8 +153,8 @@ task getLibraries {
         }
     }
 
-    def cofhSource = 'http://minecraft.curseforge.com/mc-mods/220333-cofhlib/files/2233833/download'
-    def cofhDest = new File('libs', 'CoFHLib-1.7.10-1.0.1-151-dev.jar')
+    def cofhSource = 'https://media.forgecdn.net/files/2388/748/CoFHLib-%5b1.7.10%5d1.2.1-185-dev.jar'
+    def cofhDest = new File('libs', 'CoFHLib-[1.7.10]1.2.1-185-dev.jar')
 
     if(!cofhDest.exists() ){
         download {
